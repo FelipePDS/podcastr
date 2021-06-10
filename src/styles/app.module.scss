@@ -4,4 +4,16 @@
     main {
         flex: 1;
     }
+
+    @media (max-width: 1650px) {
+        main {
+            width: 80%;
+        }
+    }
+
+    @media (max-width: 1340px) {
+        main {
+            width: 60%;
+        }
+    }
 }
