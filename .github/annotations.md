@@ -3,6 +3,7 @@
 ## AULA 01 – LITOFF
 
 **Dependências:**
+
 - NODE.JS – npm – yarn
 - VS CODE
 
@@ -17,6 +18,7 @@
 Preparando ambiente
 
 **Resolvendo problemas de SEO do react**
+
 - Server Side Rendering
 - Static Site Genteration
 - Next.js:
@@ -32,6 +34,7 @@ Preparando ambiente
 ## AULA 02
 
 **Por que Typescript?**
+
 - Ele especifica os tipos de dados que estão em outro local de desenvolvimento
 - Especifica os dados que um certo objeto possuí em um parâmetro de uma função (isso ajuda na hora de dar manutenção em um código e saber o que existe em uma certa variável)
   - Melhor manutenção do código
@@ -116,6 +119,7 @@ e para atribuir uma classe estilizada ela deve vir a partir desse objeto styles:
 <br>
 
 **Consumindo API com JSON**
+
 Para "puxar" dados de um arquivo JSON que converte em uma API (com listagens, filtro, relacionamento, criação...), há um pacote chamado json-server:
 
 `$ yarn add json-server -D`
@@ -208,3 +212,93 @@ Para executar o projeto como ele roda em produção é necessário realizar o co
 <br>
 
 ## Aula 03
+
+**Tipando as funções e o seus retornos**
+
+> No typescript conseguimos criar a tipagem de uma função, definindo o seu formato, retorno...
+> Para fazer isso a Function precisa virar uma variável que recebe uma arrow function
+
+Exemplo de como tipar uma função:
+
+``` tsx
+export const getStaticProps: GetStaticProps = async () => {
+    const response = await fetch('http://localhost:3333/episodes');
+    const data = await response.json();
+
+    return {
+        props: {
+            episodes: data
+        },
+
+        revalidate: 60 * 60 * 8
+    }
+}
+```
+
+Criando uma tipagem própria (type):
+
+``` tsx
+type Episode = {
+    id: string;
+    title: string;
+    thumbnail: string;
+    description: string;
+    members: string;
+    duration: number;
+    durationAsString: string;
+    url: string;
+    publishedAt: string;
+};
+
+type HomeProps = {
+    latestEpisodes: Episode[];
+    allEpisodes: Episode[];
+};
+```
+
+**Roteamento no Next.js**
+
+Quando colocado um arquivo na pasta pages e na url colocar o seu nome, o próprio next.js irá rotear o que tem no arquivo.
+
+Também podemos realizar isso criando uma pasta, assim será criado uma URL com o nome dela. Dentro dessa mesma pasta podemos criar um arquivo, onde seu nome entre colchetes irá referenciar uma queryparams para a URL do nome da pasta. Exemplo:
+
+*baseURL*: http://localhost/
+
+*Nome da pasta*: episode
+
+*Nome do arquivo*: [slug].tsx
+
+*Nova URL*: http://localhost/episode/queryparams -> pode ser passado um id de um episode por exemplo.
+
+Para que isso seja usado, é necessário importar o useRouter dentro do next/router:
+
+``` tsx
+import { useRouter } from 'next/router';
+
+export default function Episode() {
+    const router = useRouter();
+    
+    return (
+        <h1>Episode</h1>
+    )
+}
+```
+
+Assim, para acessar a queryString que vem da url, é só acessar por: router.query.nomeDoArquivo
+
+**Páginas estáticas dinâmicas**
+
+No next.js é possível exportar outra função que ele auto reconhece para aplicar esse tipo de página.
+
+As páginas estáticas dinâmicas ocorrem quando puxamos dados do servidor de certo em certo tempo e, assim, transformamos a página estática após pegar os dados, porém há páginas que recebem query params, onde o servidor pode puxar mais de um dado.
+
+Então para isso, no next.js adicionamos o seguinte export (além do getStaticProps):
+
+``` tsx
+export const getStaticPaths: GetStaticPaths = async () => {
+    return {
+        paths: [],
+        fallback: 'blocking'
+    };
+};
+```
