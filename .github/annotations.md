@@ -302,3 +302,127 @@ export const getStaticPaths: GetStaticPaths = async () => {
     };
 };
 ```
+
+## Aula 04 - Contexto e áudio
+
+Para gerar uma página (a partir de um path) de forma estática, é necessário informar os dados para o next.js, através do paths do getStaticPaths (sempre será gerado de forma estática apenas quando o projeto estiver em produção). Então indicaremos qual o query params que ele deverá buscar para pegar os dados e gerar a página de forma estática. Siga um exemplo não completo ainda:
+
+``` tsx
+export const getStaticPaths: GetStaticPaths = async () => {
+    return {
+        paths: [{
+            params: {
+                slug: 'a-importancia-da-contribuicao-em-open-source'
+            }
+        }],
+
+        fallback: 'blocking'
+    };
+};
+```
+
+- fallback true: indica para o next.js pegar os dados da página quando alguém acessá-la pela primeira vez com o projeto em produção (ele roda pelo servidor do browser);
+- fallback false: o inverso do fallback true;
+- fallback blocking: ele tem a mesma função do fallback true, porém ele roda no servidor local next.js (servidor node.js).
+
+Realizandoo geramento de página de forma mais dinâmica:
+
+``` tsx
+export const getStaticPaths: GetStaticPaths = async () => {
+    const { data } = await api.get('episodes', {
+        params: {
+            _limit: 2,
+            _sort: 'published_at',
+            _order: 'desc'
+        }
+    });
+
+    const paths = data.map(episode => {
+        return {
+            params: {
+                slug: episode.id
+            }
+        };
+    });
+
+    return {
+        paths,
+
+        fallback: 'blocking'
+    };
+};
+```
+
+**Contexto API no React.js**
+
+Funcionalidade do React.js que permite o compartilhamento de dados entre componentes da aplicação.
+
+Um exemplo de uso do Context nessa aplicação do podcastr é, quando o usuário clicar pra tocar um podcast no componente Home e esse podcast ter de exibir no componente Player.
+
+Com um módulo do React.js podemos realizar isso. Como exemplo do PlayerContext a seguir:
+
+``` tsx
+import { createContext } from 'react';
+
+export const PlayerContext = createContext('Diego');
+```
+
+e para aplicar o contexto nos componentes que queremos aplicar, basta envolver esse componente de contexto por volta dos componentes (colocaremos dentro do _app.tsx):
+
+``` tsx
+import '../styles/global.scss';
+
+import { Header } from '../components/Header';
+import { Player } from '../components/Player';
+import { PlayerContext } from '../contexts/PlayerContext';
+
+import styles from '../styles/app.module.scss';
+
+function MyApp({ Component, pageProps }) {
+  return (
+      <PlayerContext.Provider value={'Diego'}>
+          <div className={styles.wrapper}>
+            <main>
+                <Header />
+                <Component {...pageProps} />
+            </main>
+            
+            <Player />
+        </div>
+      </PlayerContext.Provider>
+  )
+}
+
+export default MyApp
+```
+
+e para usuar o context dentro do componente (ou seja, pegar os dados que queremos para o componente)...
+
+replicamos isso no componente Player:
+
+``` tsx
+import { useContext } from 'react';
+import { PlayerContext } from '../../contexts/PlayerContext';
+
+import styles from './styles.module.scss';
+
+export function Player() {
+    const player = useContext(PlayerContext);
+
+    return (
+        <div className={styles.playerContainer}>
+            <header>
+                <img src="/playing.svg" alt="Tocando agora" />
+                <strong>Tocando agora {player}</strong>
+            </header>
+
+            ...
+```
+
+> Como todos os componentes estão envolvidos por este context, então todos podem acessar os dados deste context
+
+**Slider no React.js**
+
+`$ yarn add rc-slider`
+
+## Aula 05
