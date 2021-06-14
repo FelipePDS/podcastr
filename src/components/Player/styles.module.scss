@@ -38,6 +38,88 @@
     }
 }
 
+.currentEpisode {
+    text-align: center;
+
+    img {
+        border-radius: 1.5rem;
+    }
+
+    strong {
+        display: block;
+        margin-top: 2rem;
+        font: 600 1.25rem Lexend, sans-serif;
+        line-height: 1.75rem;
+    }
+
+    span {
+        display: block;
+        margin-top: 1rem;
+        opacity: .6;
+        line-height: 1.5rem;
+    }
+}
+
+@media (max-height: 800px) {
+    .currentEpisode {
+        img {
+            width: 75%;
+            height: 75%;
+        }
+
+        strong {
+            margin-top: 1.8rem;
+            font: 600 1.15rem Lexend, sans-serif;
+            line-height: 1.6rem;
+        }
+    
+        span {
+            margin-top: 1rem;
+            line-height: 1.45rem;
+        }
+    }
+}
+
+@media (max-height: 700px) {
+    .currentEpisode {
+        img {
+            width: 66%;
+            height: 66%;
+        }
+
+        strong {
+            margin-top: 1.4rem;
+            font: 600 1.1rem Lexend, sans-serif;
+            line-height: 1.4rem;
+        }
+    
+        span {
+            margin-top: 1rem;
+            line-height: 1.35rem;
+        }
+    }
+}
+
+@media (max-height: 600px) {
+    .currentEpisode {
+        img {
+            width: 60%;
+            height: 60%;
+        }
+
+        strong {
+            margin-top: 1.2rem;
+            font: 600 1rem Lexend, sans-serif;
+            line-height: 1.3rem;
+        }
+    
+        span {
+            margin-top: 1rem;
+            line-height: 1.25rem;
+        }
+    }
+}
+
 .emptyPlayer {
     display: flex;
     align-items: center;
@@ -92,11 +174,26 @@
         border: 0;
         font-size: 0;
 
+        transition: filter .2s;
+
+        &:disabled {
+            cursor: default;
+        }
+
+        &:hover:not(:disabled) {
+            filter: brightness(.75);
+        }
+
         &.playButton {
             width: 4rem;
             height: 4rem;
             border-radius: 1rem;
+            
             background-color: var(--purple-400);
+
+            &:hover:not(:disabled) {
+                filter: brightness(.95);
+            }
         }
     }
 }
