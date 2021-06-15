@@ -396,7 +396,7 @@ function MyApp({ Component, pageProps }) {
 export default MyApp
 ```
 
-e para usuar o context dentro do componente (ou seja, pegar os dados que queremos para o componente)...
+e para usar o context dentro do componente (ou seja, pegar os dados que queremos para o componente)...
 
 replicamos isso no componente Player:
 
@@ -425,4 +425,5 @@ export function Player() {
 
 `$ yarn add rc-slider`
 
-## Aula 05
+## Aula 05 - Controlando player
+
