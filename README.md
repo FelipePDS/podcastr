@@ -30,11 +30,11 @@
 <br>
 <h2 id="technologies">:computer: Technologies</h2>
 
-- [React.js]([https://link](https://pt-br.reactjs.org/)) + [Next.js]([https://link](https://nextjs.org/))
-- Promise based HTTP client: [axios]([https://link](https://www.npmjs.com/package/axios))
-- Date Formatting: [date-fns]([https://link](https://date-fns.org/))
-- Stylization: [sass]([https://link](https://sass-lang.com/install))
-- Server: [json-server]([https://link](https://www.npmjs.com/package/json-server))
+- [React.js](https://pt-br.reactjs.org/) + [Next.js](https://nextjs.org/)
+- Promise based HTTP client: [axios](https://www.npmjs.com/package/axios)
+- Date Formatting: [date-fns](https://date-fns.org/)
+- Stylization: [sass](https://sass-lang.com/install)
+- Server: [json-server](https://www.npmjs.com/package/json-server)
   
 > See [package.json](https://github.com/FelipePDS/podcastr/blob/main/package.json) file
 
