@@ -1,5 +1,5 @@
 # <h1 align="center">PODCASTR</h1>
-<p align="center">"Your Podcast Platform"</p>
+<p align="center">"Your Podcast Platform about programming"</p>
 <p align="center"><img src="https://github.com/FelipePDS/podcastr/blob/main/public/favicon.png" /></p>
 
 <p align="center">
@@ -20,12 +20,15 @@
   - [Clonning](#clonning)
   - [Download dependencies](#downloadDependencies)
   - [Running](#running)
+<!-- - [Colaboration]() -->
 - [:art: Layout](#layout)
 - [:bust_in_silhouette: Author](#author)
 - [License](#license)
 
 <br>
 <h2 id="about">About</h2>
+
+A podcast platform developed at Next.js, where you can select from the most diverse podcasts about Rocketseat programming. Counting with an easy use through a "Player" to listen the episodes.
 
 <br>
 <h2 id="technologies">:computer: Technologies</h2>
@@ -107,6 +110,10 @@ $ yarn start
 
 <br>
 <h2 id="layout">:art: Layout</h2>
+
+![App Layout](https://github.com/FelipePDS/podcastr/blob/main/.github/app-layout-01.png)
+
+![App Layout](https://github.com/FelipePDS/podcastr/blob/main/.github/app-layout-02.png)
 
 <br>
 <h2 id="author" align="center">:bust_in_silhouette: Author</h2>
