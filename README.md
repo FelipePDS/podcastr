@@ -111,9 +111,9 @@ $ yarn start
 <br>
 <h2 id="layout">:art: Layout</h2>
 
-![App Layout](https://github.com/FelipePDS/podcastr/blob/main/.github/app-layout-01.png)
+![App Layout](https://github.com/FelipePDS/podcastr/blob/main/.github/app-layout-01.PNG)
 
-![App Layout](https://github.com/FelipePDS/podcastr/blob/main/.github/app-layout-02.png)
+![App Layout](https://github.com/FelipePDS/podcastr/blob/main/.github/app-layout-02.PNG)
 
 <br>
 <h2 id="author" align="center">:bust_in_silhouette: Author</h2>
