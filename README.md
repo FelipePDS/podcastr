@@ -36,7 +36,7 @@
 - Stylization: [sass]([https://link](https://sass-lang.com/install))
 - Server: [json-server]([https://link](https://www.npmjs.com/package/json-server))
   
-> See [package.json]([https://link](https://github.com/FelipePDS/podcastr/blob/main/package.json)) file
+> See [package.json](https://github.com/FelipePDS/podcastr/blob/main/package.json) file
 
 <br>
 <h2 id="cloneAndRunApp">:open_file_folder: Clone and run App</h2>
