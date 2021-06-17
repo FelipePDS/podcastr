@@ -1,14 +1,14 @@
 # <h1 align="center">PODCASTR</h1>
-<p align="center">":headphones: Your Podcast Platform"</p>
+<p align="center">"Your Podcast Platform"</p>
 <p align="center"><img src="https://github.com/FelipePDS/podcastr/blob/main/public/favicon.png" /></p>
 
 <p align="center">
-    <a href="https://github.com/FelipePDS/nps/blob/main/LICENSE"><img src="https://img.shields.io/github/license/FelipePDS/nps?style=for-the-badge"></a> 
-    <img src="https://img.shields.io/github/last-commit/FelipePDS/podcastr?style=for-the-badge"><br>
-    <img src="https://img.shields.io/github/repo-size/FelipePDS/podcastr?style=for-the-badge"/>
-    <img src="https://img.shields.io/static/v1?label=node&message=v12.18.0&color=000000&style=for-the-badge&logo=next.js&logoColor=white"> 
-    <img src="https://img.shields.io/static/v1?label=npm&message=v6.14.4&color=CB3837&style=for-the-badge&logo=npm&logoColor=white"> 
-    <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=2C8EBB&style=for-the-badge&logo=yarn&logoColor=white">
+    <a href="https://github.com/FelipePDS/nps/blob/main/LICENSE"><img src="https://img.shields.io/github/license/FelipePDS/nps?style=for-the-badge&color=8257e5"></a> 
+    <img src="https://img.shields.io/github/last-commit/FelipePDS/podcastr?style=for-the-badge&color=8257e5"><br>
+    <img src="https://img.shields.io/github/repo-size/FelipePDS/podcastr?style=for-the-badge&color=8257e5"/>
+    <img src="https://img.shields.io/static/v1?label=node&message=v12.18.0&color=8257e5&style=for-the-badge&logo=next.js&logoColor=white"> 
+    <img src="https://img.shields.io/static/v1?label=npm&message=v6.14.4&color=8257e5&style=for-the-badge&logo=npm&logoColor=white"> 
+    <img src="https://img.shields.io/static/v1?label=yarn&message=v1.22.5&color=8257e5&style=for-the-badge&logo=yarn&logoColor=white">
 </p>
 
 ## Topics
@@ -17,6 +17,9 @@
 - [:computer: Technologies](#technologies)
 - [:open_file_folder: Clone and run App](#cloneAndRunApp)
   - [Requirements](#requirements)
+  - [Clonning](#clonning)
+  - [Download dependencies](#downloadDependencies)
+  - [Running](#running)
 - [:art: Layout](#layout)
 - [:bust_in_silhouette: Author](#author)
 - [License](#license)
@@ -27,28 +30,28 @@
 <br>
 <h2 id="technologies">:computer: Technologies</h2>
 
-- [React.js](https://link) + [Next.js](https://link)
-- Request HTTP: [axios](https://link)
-- Date Formatting: [date-fns](https://link)
-- Stylization: [sass](https://link)
-- Server: [json-server](https://link)
+- [React.js]([https://link](https://pt-br.reactjs.org/)) + [Next.js]([https://link](https://nextjs.org/))
+- Promise based HTTP client: [axios]([https://link](https://www.npmjs.com/package/axios))
+- Date Formatting: [date-fns]([https://link](https://date-fns.org/))
+- Stylization: [sass]([https://link](https://sass-lang.com/install))
+- Server: [json-server]([https://link](https://www.npmjs.com/package/json-server))
   
-> See [package.json](https://link) file
+> See [package.json]([https://link](https://github.com/FelipePDS/podcastr/blob/main/package.json)) file
 
 <br>
 <h2 id="cloneAndRunApp">:open_file_folder: Clone and run App</h2>
 
 The App was development in Next.js, where it consists of some resources that are necessary for the development environment. See below:
 
-<h2 id="requirements">Requirements</h2>
+<h3 id="requirements">Requirements</h3>
 
 Download the following:
 
-- [Git](https://link)
-- [Visual Studio Code](https://link)
-- [Node.js / NPM](https://link)
+- [Git](https://git-scm.com/downloads)
+- [Visual Studio Code](https://code.visualstudio.com/download)
+- [Node.js / NPM](https://nodejs.org/en/download/)
 
-## Cloning
+<h3 id="clonning">Clonning</h3>
 
 In the terminal bash of Git, run the following commands:
 
@@ -60,7 +63,15 @@ $ git clone https://github.com/FelipePDS/podcastr.git
 $ cd podcastr
 ```
 
-## Running
+<h3 id="downloadDependencies">Download dependencies</h3>
+
+``` bash
+$ npm insatll
+# or
+$ yarn add
+```
+
+<h3 id="running">Running</h3>
 
 ``` bash
 # run app
@@ -75,6 +86,7 @@ $ yarn server
 ```
 
 > App access in Browser: `http://localhost:3000`
+
 > Server address: `http://localhost:3333`
 
 To get the app into production:
